@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
             this.move = 0
             this.movingId
             this.limit = 250
-            this.Rcorner = x + 30
-            this.Lcorner = x - 30
+            this.Rcorner = this.left + 30
+            this.Lcorner = this.left - 30
 
             const visual = this.visual
             visual.classList.add('player')
@@ -117,6 +117,25 @@ document.addEventListener("DOMContentLoaded", () => {
         player1 = new Player(x,y);
         player1.jump()
     }
+    function control(e) {
+        if (e.key === "ArrowLeft") {
+            moveLeft()
+        } else if (e.key === "ArrowRight") {
+            moveRight()
+        }
+    }
+    function moveLeft() {
+        if (player1.left >= 10){
+            player1.left -= 10
+            player1.visual.style.left = player1.left + 'px'
+        }
+    }
+    function moveRight() {
+        if (player1.left <= mapGame.clientWidth - 70){
+            player1.left += 10
+            player1.visual.style.left = player1.left + 'px'
+        }
+    }
     function startGame(){
         startBtn.addEventListener('click',()=> {
             startBtn.classList.add('btn-hide')
@@ -125,7 +144,8 @@ document.addEventListener("DOMContentLoaded", () => {
             createMap(numClouds)
             gameId = setInterval(moveMap, 30)
             createPlayer()
-            setTimeout(gameOver, 10000)
+            document.addEventListener('keydown',control)
+            setTimeout(gameOver, 15000)
         })
     }
     function gameOver() {
