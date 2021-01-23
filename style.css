@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16rem;
+    height: 5rem;
+    position: absolute;
+    z-index: 3;
+    top: calc(50% - 2.5rem);
+    left: calc(50% - 8rem);
+    border-radius: .8rem;
+    border: none;
+    outline: none;
+    font-size: 2rem;
+    color: antiquewhite;
+    background-color: cadetblue;
+}
+.btn:focus {
+    outline: none;
+}
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 9px 1px black;
+}
+.btn-hide {
+    display: none;
+}
+.main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60rem;
+    width: 40rem;
+    background-color: #a9ead5;
+    box-shadow: .7rem .7rem 1.2rem 0px #24242d;
+}
+.main-game {
+    justify-content: initial;
+    align-items: initial;
+}
+.platform {
+    position: absolute;
+    bottom: 0;
+    height: 1rem;
+    width: 10rem;
+    z-index: 1;
+    background-color: blueviolet;
+    border-radius: 1rem;
+}
+.player {
+    position: absolute;
+    height: 10rem;
+    width: 6rem;
+    z-index: 2;
+    background-color: chocolate;
+    border-radius: .5rem;
+}
+
+/* .grid {
+    width: 400px;
+    height: 600px;
+    background-color: yellow;
+    position: relative;
+    font-size: 200px;
+    text-align: center;
+}
+
+.doodler {
+    width: 60px;
+    height: 85px;
+    background-color: red;
+    position: absolute;
+}
+
+.platform {
+    width: 85px;
+    height: 15px;
+    background-color: green;
+    position: absolute;
+} */
